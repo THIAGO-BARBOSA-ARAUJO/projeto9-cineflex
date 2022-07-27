@@ -1,7 +1,11 @@
+import Home from "./home/Home";
+import Navbar from "./navbar/Navbar";
+
 export default function App(){  
     return(
         <>
-            <h1>Olá galera</h1>
+            <Navbar/>
+            <Home/>
         </>
     )
 }
