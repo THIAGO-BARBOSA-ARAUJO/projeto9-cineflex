@@ -1,0 +1,48 @@
+.sessao {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: aqua;
+}
+
+.sessao h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #293845;
+    padding-top: 30px;
+    margin-bottom: 20px;
+}
+
+.asentos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.assento {
+    width: 26px;
+    height: 26px;
+    background: #C3CFD9;
+    border: 1px solid #808F9D;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    cursor: pointer;
+}
+
+.assento p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+    letter-spacing: 0.04em;
+    color: #000000;
+}
