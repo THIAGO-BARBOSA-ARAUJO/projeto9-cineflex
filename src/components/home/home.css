@@ -4,6 +4,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    background-color: #E5E5E5;
 }
 
 .home h1 {
@@ -35,8 +39,12 @@
     justify-content: center;
     margin-top: 10px;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .filme img {
     width: 90%;
+    height: 90%;
 }

@@ -1,11 +1,24 @@
 import Home from "./home/Home";
 import Navbar from "./navbar/Navbar";
+import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Horariofilme from "./horariofilme/Horariofilme";
+import Sessaofilme from "./sessao/Sessaofilme";
 
-export default function App(){  
+export default function App(){ 
+    const [infofilme, setinfofilmes] = useState() 
+
     return(
-        <>
+        <BrowserRouter>
             <Navbar/>
-            <Home/>
-        </>
+            <Routes>
+                console.log(infofilme)
+                <Route path="/" element={<Home infofilme={infofilme} setinfofilmes={setinfofilmes}/>} />
+
+                <Route path={`/sessoes/:id`} element={<Horariofilme idfilme={infofilme?.id} nomefilme={infofilme?.title}/>}/>
+                
+                <Route path={`/assentos/:idsessao`} element={<Sessaofilme />}/>
+            </Routes>
+        </BrowserRouter>
     )
 }

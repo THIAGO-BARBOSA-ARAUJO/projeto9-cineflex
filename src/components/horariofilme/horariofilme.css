@@ -1,0 +1,107 @@
+a {
+    text-decoration: none;
+}
+
+.horariofilmes {
+    width: 100%;
+    max-width: 375px;
+    margin: 0 auto;
+    margin-bottom: 110px;
+    background-color: #E5E5E5;
+}
+
+.horariofilmes h1 {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #293845;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+
+.horariofilme p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    letter-spacing: 0.02em;
+    color: #293845;
+    margin-left: 20px;
+}
+
+.horarios {
+    display: flex;
+    margin-left: 20px;
+}
+
+.horario {
+    width: 83px;
+    height: 43px;
+    background: #E8833A;
+    border-radius: 3px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    cursor: pointer;
+}
+
+.footer {
+    width: 375px;
+    height: 117px;
+    background: #DFE6ED;
+    border: 1px solid #9EADBA;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translatex(-50%);
+}
+
+.footer .contimg {
+    width: 64px;
+    height: 89px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+
+.footer .contimg img {
+    width: 48px;
+    height: 72px;
+}
+
+.footer p {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #293845
+}
