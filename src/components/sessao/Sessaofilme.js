@@ -9,30 +9,30 @@ import Assentos from "./Assentos";
 export default function Sessaofilme(){
 
     const {idsessao} = useParams()
+    const [idsAssento, setIdsAssento] =useState([])
     const [assentos, setAssentos] = useState([])
     const [infofilme, setInfofilme] = useState({})
     const [dataFilme, setDatafilme] = useState([])
-    const [assentoOcupado, setAssentoOcupado] = useState()
-    const [corbolinha, setCorbolinha] = useState(false)
+    
 
 	useEffect(() => {
-		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idsessao}/seats`);
+		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idsessao}/seats`);
 
 		requisicao.then((resposta) => {
             setAssentos(resposta.data.seats)
             setInfofilme(resposta.data.movie)
             setDatafilme([resposta.data.day.weekday, resposta.data.name])
-            //console.log(resposta.data.seats)
+            console.log(resposta.data.seats)
 		})
 	}, [])
-   
+    console.log(idsAssento)
     return(
         <div className="sessao">
             <h1>Selecione o(s) assento(s)</h1>
             <div className="asentos">
                 {assentos.map((assento)=>{
                     return(
-                        <Assentos assento={assento}/>
+                        <Assentos idsAssento={idsAssento} setIdsAssento={setIdsAssento} assento={assento}/>
                     )
                 })}
             </div>
@@ -50,7 +50,7 @@ export default function Sessaofilme(){
                     <p>indisponivel</p>
                 </div>
             </div>
-            <Form dataFilme={dataFilme} infofilme={infofilme} />
+            <Form idsAssento={idsAssento} dataFilme={dataFilme} infofilme={infofilme} />
         </div>
     )
 }

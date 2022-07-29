@@ -11,7 +11,7 @@ export default function Horariofilme({setIdsessao, idfilme}){
     const [infofilme, setInfofilmes] = useState([])
 
 	useEffect(() => {
-		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idfilme}/showtimes`);
+		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/movies/${idfilme}/showtimes`);
 
 		requisicao.then((resposta) => {
             setDatas(resposta.data.days)
