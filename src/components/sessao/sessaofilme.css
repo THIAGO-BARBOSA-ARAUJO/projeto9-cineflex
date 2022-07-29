@@ -2,7 +2,6 @@
     width: 100%;
     max-width: 375px;
     margin: 0 auto;
-    background-color: aqua;
 }
 
 .sessao h1 {
@@ -36,8 +35,33 @@
     margin: 10px 5px;
     cursor: pointer;
 }
+.assentoindisponivel {
+    background: #FBE192;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #808F9D;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    cursor: pointer;
+}
 
-.assento p {
+.assentoclicado {
+    background: #8DD7CF;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #808F9D;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 5px;
+    cursor: pointer; 
+}
+
+.assento p, .assentoindisponivel p, .assentoclicado p {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -46,3 +70,117 @@
     letter-spacing: 0.04em;
     color: #000000;
 }
+
+.indicacoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.selecionado, .disponivel, .indisponivel {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.selecionado .bolinha-verde {
+    width: 25px;
+    height: 25px;
+    background: #8DD7CF;
+    border: 1px solid #1AAE9E;
+    border-radius: 17px;
+}
+
+.selecionado p, .disponivel p, .indisponivel p  {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 15px;
+    letter-spacing: -0.013em;
+    color: #4E5A65;
+}
+
+.disponivel .bolinha-cinza {
+    width: 24px;
+    height: 24px;
+    background: #C3CFD9;
+    border: 1px solid #7B8B99;
+    border-radius: 17px;
+}
+
+.indisponivel .bolinha-amarela {
+    width: 24px;
+    height: 24px;
+    background: #FBE192;
+    border: 1px solid #F7C52B;
+    border-radius: 17px;
+}
+
+/*Form*/
+
+.forms {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.forms label {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    align-items: center;
+    color: #293845;
+}
+
+.forms input {
+    width: 327px;
+    height: 51px;
+    background: #FFFFFF;
+    border: 1px solid #D5D5D5;
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.forms input::placeholder {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    color: #AFAFAF;
+}
+
+.forms .btn {
+    margin-top: 50px;
+    margin-left: 14%;
+}
+
+.forms button {
+    width: 225px;
+    height: 42px;
+    background: #E8833A;
+    border-radius: 3px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: 0.04em;
+    color: #FFFFFF;
+    cursor: pointer;
+    border: none;
+}
+/*Form*/

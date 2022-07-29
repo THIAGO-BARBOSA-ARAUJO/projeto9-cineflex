@@ -105,3 +105,7 @@ a {
     align-items: center;
     color: #293845
 }
+
+.footer .data {
+    display: flex;
+}

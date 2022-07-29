@@ -1,10 +1,20 @@
-export default function Footer({infofilme}){
+export default function Footer({dataFilme, infofilme}){
     return (
         <div className="footer">
             <div className="contimg">
                 <img src={infofilme.posterURL} alt={infofilme.title}/>
             </div>
-            <p>{infofilme.title}</p>
+            <div className="data">
+                <div>
+                    <p>{infofilme.title}</p>
+                    {dataFilme ? (
+                    <>
+                        <p>{`${dataFilme[0]} - ${dataFilme[1]}`}</p>
+                    </>
+                
+                ) : ("")}
+                </div>
+            </div>
         </div>
     )
 }
