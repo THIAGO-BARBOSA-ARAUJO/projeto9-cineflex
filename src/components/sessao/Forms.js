@@ -1,11 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import "../horariofilme/Footer"
 import Footer from "../horariofilme/Footer";
+import { useNavigate } from "react-router-dom";
 
-export default function Form ({idsAssento, dataFilme, infofilme}) {
-	const [nome, setNome] = useState("");
+export default function Form ({dataescolhida, numacentos, setInfotelasucesso, idsAssento, dataFilme, infofilme}) {
+	const [nome, setNome] = useState("")
 	const [cpf, setCpf] = useState("");
+	const [enviar, setEnviar] = useState(false)
+	let navigate = useNavigate();
+	//console.log(infofilme.title)
+
+	useEffect(() => {
+		setInfotelasucesso({
+			titulo: infofilme.title,
+			data: dataescolhida,
+			hora: dataFilme[1],
+			acentos: numacentos,
+			nome: nome,
+			cpf: cpf
+		})
+	}, [enviar])
+
+
 
 	function fazerLogin(event) {
 		event.preventDefault();
@@ -16,7 +33,8 @@ export default function Form ({idsAssento, dataFilme, infofilme}) {
 	        name: nome,
 	        cpf: cpf
 		});
-		console.log(requisicao)
+		//console.log(requisicao)
+			navigate("/sucesso")
 		}catch {
 			console.log("deu ruim")
 		}
@@ -33,7 +51,7 @@ export default function Form ({idsAssento, dataFilme, infofilme}) {
                 <input required type="text" id="campoCpf" placeholder="Digite seu CPF..." value={cpf} onChange={e => setCpf(e.target.value)} /><br/>
 
                 <div className="btn">
-                    <button type="submit">Reservar assento(s)</button>
+                    <button onClick={()=>{setEnviar(!enviar)}} type="submit">Reservar assento(s)</button>
                 </div>
 		    </form>
             <Footer dataFilme={dataFilme} infofilme={infofilme} />

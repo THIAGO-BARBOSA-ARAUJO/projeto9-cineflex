@@ -1,7 +1,9 @@
 .sessao {
     width: 100%;
     max-width: 375px;
+    height: 90vh;
     margin: 0 auto;
+    background: #E5E5E5;
 }
 
 .sessao h1 {
@@ -39,7 +41,7 @@
     background: #FBE192;
     width: 26px;
     height: 26px;
-    border: 1px solid #808F9D;
+    border: 1px solid #F7C52B;
     border-radius: 12px;
     display: flex;
     justify-content: center;
@@ -52,7 +54,7 @@
     background: #8DD7CF;
     width: 26px;
     height: 26px;
-    border: 1px solid #808F9D;
+    border: 1px solid #1AAE9E;
     border-radius: 12px;
     display: flex;
     justify-content: center;

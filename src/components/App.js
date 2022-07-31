@@ -4,10 +4,12 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Horariofilme from "./horariofilme/Horariofilme";
 import Sessaofilme from "./sessao/Sessaofilme";
+import Telasucesso from "./telasucesso/Telasucesso";
 
 export default function App(){ 
     const [infofilme, setinfofilmes] = useState() 
-
+    const [infotelasucesso, setInfotelasucesso] = useState()
+    
     return(
         <BrowserRouter>
             <Navbar/>
@@ -17,7 +19,9 @@ export default function App(){
 
                 <Route path={`/sessoes/:id`} element={<Horariofilme idfilme={infofilme?.id} nomefilme={infofilme?.title}/>}/>
                 
-                <Route path={`/assentos/:idsessao`} element={<Sessaofilme />}/>
+                <Route path={`/assentos/:idsessao`} element={<Sessaofilme setInfotelasucesso={setInfotelasucesso} />}/>
+
+                <Route path={`/sucesso`} element={<Telasucesso infotelasucesso={infotelasucesso} />}/>
             </Routes>
         </BrowserRouter>
     )

@@ -6,14 +6,15 @@ import Form from "./Forms";
 import Footer from "../horariofilme/Footer";
 import Assentos from "./Assentos";
 
-export default function Sessaofilme(){
+export default function Sessaofilme({setInfotelasucesso}){
 
     const {idsessao} = useParams()
     const [idsAssento, setIdsAssento] =useState([])
     const [assentos, setAssentos] = useState([])
     const [infofilme, setInfofilme] = useState({})
     const [dataFilme, setDatafilme] = useState([])
-    
+    const [numacentos, setNumacentos] = useState([])
+    const [dataescolhida, setDataescolhida] = useState()
 
 	useEffect(() => {
 		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idsessao}/seats`);
@@ -22,17 +23,18 @@ export default function Sessaofilme(){
             setAssentos(resposta.data.seats)
             setInfofilme(resposta.data.movie)
             setDatafilme([resposta.data.day.weekday, resposta.data.name])
-            console.log(resposta.data.seats)
+            console.log(resposta.data.day)            
+            setDataescolhida(resposta.data.day.date)
 		})
 	}, [])
-    console.log(idsAssento)
+    //console.log(numacentos)
     return(
         <div className="sessao">
             <h1>Selecione o(s) assento(s)</h1>
             <div className="asentos">
                 {assentos.map((assento)=>{
                     return(
-                        <Assentos idsAssento={idsAssento} setIdsAssento={setIdsAssento} assento={assento}/>
+                        <Assentos setNumacentos={setNumacentos} numacentos={numacentos} idsAssento={idsAssento} setIdsAssento={setIdsAssento} assento={assento}/>
                     )
                 })}
             </div>
@@ -50,7 +52,7 @@ export default function Sessaofilme(){
                     <p>indisponivel</p>
                 </div>
             </div>
-            <Form idsAssento={idsAssento} dataFilme={dataFilme} infofilme={infofilme} />
+            <Form dataescolhida={dataescolhida} numacentos={numacentos} setInfotelasucesso={setInfotelasucesso} idsAssento={idsAssento} dataFilme={dataFilme} infofilme={infofilme} />
         </div>
     )
 }

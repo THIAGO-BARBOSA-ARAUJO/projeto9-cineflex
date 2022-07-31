@@ -1,13 +1,24 @@
 import { useState } from "react"
 import "./sessaofilme.css"
 
-export default function Assentos({idsAssento, setIdsAssento, assento}) {
+export default function Assentos({numacentos, setNumacentos, idsAssento, setIdsAssento, assento}) {
     
     const [corbolinha, setCorbolinha] = useState(false)
+    //console.log(assento.name)
     
 
     function pegaAssento(){
        let omesmo = idsAssento.includes(assento.id)
+       let jatem = numacentos.includes(assento.name)
+       
+       if(jatem) {
+        setNumacentos(numacentos.filter((aass)=>{
+            return aass !== assento.name
+        }))
+       }else{
+        setNumacentos((data)=>([...data, assento.name]))
+       }
+
        if(omesmo) {
         setIdsAssento(idsAssento.filter((item)=>{
            return item !== assento.id
@@ -29,5 +40,3 @@ export default function Assentos({idsAssento, setIdsAssento, assento}) {
         )
     )
 }
-
-//assento => class padrão
