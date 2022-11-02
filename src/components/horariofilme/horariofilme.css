@@ -4,9 +4,10 @@ a {
 
 .horariofilmes {
     width: 100%;
+    min-height: 100vh;
     max-width: 375px;
     margin: 0 auto;
-    margin-bottom: 110px;
+    padding-bottom: 130px;
     background-color: #E5E5E5;
 }
 
@@ -32,10 +33,13 @@ a {
     letter-spacing: 0.02em;
     color: #293845;
     margin-left: 20px;
+    margin-top: 30px;
 }
 
 .horarios {
     display: flex;
+    flex-wrap: wrap;
+    gap: 0 15px;
     margin-left: 20px;
 }
 
@@ -60,7 +64,7 @@ a {
     align-items: center;
     margin-right: 10px;
     margin-top: 30px;
-    margin-bottom: 30px;
+    
     cursor: pointer;
 }
 

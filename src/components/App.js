@@ -4,7 +4,7 @@ import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Horariofilme from "./horariofilme/Horariofilme";
 import Sessaofilme from "./sessao/Sessaofilme";
-import Telasucesso from "./telasucesso/Telasucesso";
+import Telasucesso from "./telasucesso/telasucesso";
 
 export default function App(){ 
     const [infofilme, setinfofilmes] = useState() 

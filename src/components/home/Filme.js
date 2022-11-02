@@ -12,6 +12,7 @@ export default function Filme({setinfofilmes}){
 
 		requisicao.then((resposta) => {
             setFilmes(resposta.data);
+            console.log(resposta.data)
 		});
 	}, []);
     return(

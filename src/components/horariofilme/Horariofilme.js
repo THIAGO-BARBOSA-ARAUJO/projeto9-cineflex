@@ -24,7 +24,7 @@ export default function Horariofilme({setIdsessao, idfilme}){
             <h1>Selecione o horário</h1>
             {datas.map((data) =>{
                 return (
-                <div key={data.id} className="horariofilme">
+                <div key={data.id} className="horariofilme ">
                     <p>{`${data.weekday} - ${data.date}`}</p>
                     <div className='horarios'>
                         {data.showtimes.map((horario)=>{
